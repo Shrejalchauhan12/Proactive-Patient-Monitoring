@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+  font-family: 'courgette', cursive;
+  font-family: 'gabarito',sans-serif;
+  font-family: 'inclusive sans',sans-serif;
+}
+
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white; 
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5em;
+  color: #2d2d2d;
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;  
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #2e6376; 
+  text-decoration: underline; 
+}
+  
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.Login {
+  background-color: #2e6376;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.Login:hover{
+  background-color: white;
+  color: #254f5e;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  width: 320px;
+  position: relative;
+  text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Form inputs */
+.popup {
+  position: fixed; /* make it cover entire screen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* slightly dark transparent background */
+  display: none; /* hidden initially */
+  align-items: center; /* center popup vertically */
+  justify-content: center; /* center popup horizontally */
+  z-index: 1000; /* higher than header z-index */
+}
+
+.popup-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Submit/Register button */
+.submit-btn {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #2e6376;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #234e5b;
+}
+
+/* Extra text below the form */
+#extraText {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+#extraText a {
+  color: #2e6376;
+  text-decoration: underline;
+}
+
+
+/*------icons-----------*/
+/* Full screen grid */
+.icon-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  grid-gap: 70px; /* More gap between icons */
+  width: 100vw;
+  height: 100vh;
+  padding: 60px;
+  box-sizing: border-box;
+  background-color: white;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Each icon item */
+.icon-item a {
+  text-decoration: none;
+  color: #254f5e;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Icon image - BIGGER size */
+.icon-item img {
+  width: 220px; /* Increased width */
+  height: 220px; /* Increased height */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Icon text */
+.icon-item p {
+  margin-top: 15px;
+  font-size: 22px; /* Bigger text */
+  font-weight: 600;
+}
+
+/* Hover effect */
+.icon-item a:hover img {
+  transform: scale(1.1);
+}
+
+.icon-item a:hover p {
+  color: black;
+}

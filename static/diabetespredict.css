@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  
+  
+  body {
+    background: url("../static/home_img1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* light overlay */
+    z-index: 0;
+  }
+  
+  .navbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white; 
+    z-index: 10;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    color: #2d2d2d;
+  }
+  
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: black;  
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: #2e6376; 
+    text-decoration: underline; 
+  }
+    
+  .auth-buttons {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .Login {
+    background-color: #2e6376;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .Login:hover{
+    background-color: white;
+    color: #254f5e;
+  }
+
+  .popup-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 320px;
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Form inputs */
+  .popup {
+    position: fixed; /* make it cover entire screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* slightly dark transparent background */
+    display: none; /* hidden initially */
+    align-items: center; /* center popup vertically */
+    justify-content: center; /* center popup horizontally */
+    z-index: 1000; /* higher than header z-index */
+  }
+  
+  .popup-content input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Submit/Register button */
+  .submit-btn {
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #2e6376;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #234e5b;
+  }
+  
+  /* Extra text below the form */
+  #extraText {
+    margin-top: 10px;
+    font-size: 0.9em;
+  }
+  #extraText a {
+    color: #2e6376;
+    text-decoration: underline;
+  }
+
+ .main {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+
+  /* 👇 Add one of these: */
+  margin-top: 40px;   /* Option A */
+  /* padding-top: 40px;  Option B */
+}
+
+  
+  form {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  }
+  
+  table {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  
+  input[type="text"], input[type="textnumber"] {
+    width: 450px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  button {
+    background-color: #254f5e;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    width: 100px;
+  }
+  
+  button:hover {
+    background-color: white;
+    color: #254f5e;
+  }
+
+
+
+
+
+
+  .dropdown-panel {
+    position: absolute;
+    top: 150px;
+    right: 30px;
+    width: 360px; /* Increased width */
+    max-height: 700px; /* Increased height */
+    background: #254f5e;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins', sans-serif;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .dropdown-panel h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .dropdown-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .param-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    width: 100%;       
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+  }
+  
+  .param-header:hover {
+    background-color: #f0f0f0;
+    color: #254f5e;
+  }
+  
+  .param-number {
+    margin-right: 8px;
+    color: white;
+  }
+  
+  .param-title {
+    flex-grow: 1;
+    color: white;
+  }
+
+  .param-header:hover .param-title,
+  .param-header:hover .param-number,
+.param-header:hover .dropdown-icon {
+  color: #254f5e;
+}
+  
+  .dropdown-icon {
+    font-size: 14px;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-icon:hover{
+    color: #254f5e;
+  }
+
+  .dropdown-text {
+    display: none;
+    font-size: 14px;
+    color: #254f5e;
+    padding: 10px 16px;
+    background-color: white;
+    border-left: 3px solid black;
+    margin: 4px 0 10px 0;
+    border-radius: 8px;
+  }
+
+   body {
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
