@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proactive Patient Monitoring</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='iconimg.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='diabetespredict.css') }}">
+    
+</head>
+<body>
+    <header class="navbar">
+      <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+        <img src="{{ url_for('static', filename='iconimg.jpg') }}" alt="MediMother Logo" style="height: 40px;">
+        <strong style="color:#2e6376; font-size:20px;">Proactive Patient Monitoring</strong>
+      </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT US</a></li>
+            <li><a href="{{ url_for('vitality_monitor') }}">VITALITY MONITOR</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="#" class="Login">Login/Register</a>
+        </div>
+      </header>
+    
+      <!-- Popup Box (Placed outside header) -->
+      <div class="popup" id="popupBox">
+        <div class="popup-content">
+          <span class="close-btn" id="closeBtn">&times;</span>
+    
+          <h2 id="popupTitle">Login</h2>
+    
+          <form id="popupForm">
+            <input type="email" placeholder="Email ID" required><br>
+            <input type="password" placeholder="Password" required><br>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+    
+          <p id="extraText">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+        </div>
+      </div>
+
+
+
+    <div align="center" class="main">
+        <form action="/predict" method="post">
+        <h1>Please Enter the following details!</h1>
+        <table>
+            <tr>
+            <td align="right" style="padding-right: 10px;">Pregnancies:</td>
+            <td align="left"><input type="text" name="Pregnancies"></td>
+        </tr>
+        <tr>
+            <td align="right" style="padding-right: 10px;">Glucose:</td>
+            <td align="left"><input type="text" name="Glucose"></td>
+        </tr>
+        <tr>
+            <td align="right" style="padding-right: 10px;">BloodPressure:</td>
+            <td align="left"><input type="text" name="BloodPressure"></td>
+        </tr>
+        <tr>
+          <tr>
+            <td align="right" style="padding-right: 10px;">SkinThickness:</td>
+            <td align="left"><input type="text" name="SkinThickness"></td>
+        </tr>
+            <td align="right" style="padding-right: 10px;">Insulin:</td>
+            <td align="left"><input type="text" name="Insulin"></td>
+        </tr>
+        <tr>
+            <td align="right"style="padding-right: 10px;">BMI:</td>
+            <td align="left"><input type="text" name="BMI"></td>
+        </tr>
+        <tr>
+            <td align="right" style="padding-right: 10px;">DiabtesPedigreeFunction:</td>
+            <td align="left"><input type="text" name="DiabetesPedigreeFunction"></td>
+        </tr>
+        <tr>
+            <td align="right" style="padding-right: 10px;">Age:</td>
+            <td align="left"><input type="textnumber" name="Age"></td>
+        </tr>
+        </table><br>
+            <button type="submit" style="height:40px; width:100px; margin-bottom:10px">Predict</button>
+        
+        {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+    </form>
+    </div>
+
+
+
+    <div class="dropdown-panel">
+        <h3>Parameter Info</h3>
+        <ul>
+          <li>
+            <div class="param-header" onclick="toggleDropdown('pregnancies')">
+                <span class="param-number">1.</span>
+                <span class="param-title">Pregnancies</span>
+                <span class="dropdown-icon">▼</span>
+            </div>
+            <div id="pregnancies" class="dropdown-text">
+              Pregnancies refers to the number of times a female patient has been pregnant.
+            </div>
+          </li>
+          <li>
+            <div class="param-header" onclick="toggleDropdown('glucose')">
+                <span class="param-number">2.</span>
+                <span class="param-title">Glucose</span>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div id="glucose" class="dropdown-text">
+                The amount of sugar in the blood. High levels may indicate diabetes.
+            </div>
+          </li>
+          <li>
+            <div class="param-header" onclick="toggleDropdown('bp')">
+                <span class="param-number">3.</span>
+                <span class="param-title">Blood Pressure</span>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div id="bp" class="dropdown-text">
+              Blood pressure is the force of blood pushing against vessel walls.
+            </div>
+          </li>
+          <li>
+            <div class="param-header" onclick="toggleDropdown('insulin')">
+                <span class="param-number">4.</span>
+                <span class="param-title">Insulin</span>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div id="insulin" class="dropdown-text">
+              Insulin is a hormone that helps regulate blood glucose levels.
+            </div>
+          </li>
+          <li>
+            <div class="param-header" onclick="toggleDropdown('BMI')">
+                <span class="param-number">5.</span>
+                <span class="param-title">BMI</span>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div id="BMI" class="dropdown-text">
+                Weight (kg) / Height² (m²).</div>
+          </li>
+          <li>
+            <div class="param-header" onclick="toggleDropdown('age')">
+                <span class="param-number">6.</span>
+                <span class="param-title">Age</span>
+              <span class="dropdown-icon">▼</span>
+            </div>
+            <div id="age" class="dropdown-text">
+                Age of the person (in years).</div>
+          </li>
+        </ul>
+      </div>
+      
+      
+      
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

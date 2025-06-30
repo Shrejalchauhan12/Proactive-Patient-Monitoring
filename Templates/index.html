@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proactive Patient Monitoring</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='iconimg.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" 
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+          <h1 style="display: flex; align-items: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='iconimg.jpg') }}" alt="MediMother Logo" style="height: 50px; ">         
+             <strong style="color:#2e6376; font-size:20px;">Proactive Patient Monitoring</strong>
+
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT US</a></li>
+            <li><a href="{{ url_for('vitality_monitor') }}">VITALITY MONITOR</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="#" class="Login">Login/Register</a>
+        </div>
+      </header>
+
+      
+
+  <div class="popup" id="popupBox">
+    <div class="popup-content">
+      <span class="close-btn" id="closeBtn">×</span>
+      <h2 id="popupTitle">Login</h2>
+      <form id="popupForm">
+        <input type="email" placeholder="Email ID" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <button type="submit" class="submit-btn">Login</button>
+      </form>
+      <p id="extraText">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+    </div>
+  </div>
+      <!-- Hero section -->
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Health Is Our First Priority.</h1>
+          <p>At our core, your health insights and diagnostic accuracy are our highest priorities. We're committed to delivering precise, timely, and compassionate pathology services at every step of your care journey.</p>
+          <a href="{{ url_for('about') }}" class="btn">Visit Us to Know More</a>
+        </div>
+        <div class="box">
+            <h1>PREDICT YOUR HEALTH</h1>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <input type="number" id="age" name="age" placeholder="Enter your age" required>
+            <input type="number" id="month" name="month" placeholder="Pregnancy month (1–9)" required>
+            <a href="{{ url_for('icons') }}" class="btn2">PREDICT NOW</a>
+        </div>
+      </section>    
+
+      <!------About-->
+      <section class="about">
+        <div class="row">
+            <div class="left">
+                <h1>About Proactive Patient Monitoring</h1>
+                <img src="{{ url_for('static', filename='home_img2.jpg') }}" alt="">
+            </div>
+            <div class="right">
+                <h3>Smart companion for better health.</h3>
+                <p>Proactive Patient Monitoring is redefining diagnostic support for pathologists by integrating advanced machine learning into everyday clinical workflows. Designed as a reliable, AI-powered assistant, the platform enables healthcare professionals to predict diseases such as diabetes,
+                   migraines, and cancer types with greater speed and accuracy. By automating the analysis of patient symptoms and medical data, Proactive Patient Monitoring reduces diagnostic time and enhances decision-making precision.
+                   Built with clinical utility in mind, our tool offers an intuitive interface that simplifies data input and delivers actionable insights—allowing pathologists to focus on what matters most: patient care. With Proactive Patient Monitoring, we’re not just using technology to 
+                   support diagnostics—we’re reshaping the future of medical analysis with scalable, intelligent solutions.</p>
+                  <a href="{{ url_for('about') }}" class="btn3">Explore More</a>
+            </div>
+        </div> 
+      </section>
+
+      <!--------predict-->
+      <section class="predict">
+        <div class="container">
+            <div class="row1">
+            <div class="left">
+                <h1>Predict Health Issues Before They Become Problems</h1>
+                <p>Proactive Patient Monitoring harnesses powerful machine learning algorithms to assist pathologists in diagnosing diseases with speed and precision. By analyzing clinical data and patient-reported symptoms through models trained on real medical datasets, 
+                the platform delivers accurate,data-driven predictions for conditions like diabetes, migraines, and various cancers.
+                Designed to support informed clinical decisions, Maddie Mother streamlines diagnostic workflows—reducing manual effort while improving reliability. Whether used for initial screenings or to complement ongoing assessments, 
+                this AI-driven assistant equips medical professionals with timely insights, promoting earlier intervention and more effective patient care.</p>
+                <a href="{{ url_for('vitality_monitor') }}" class="btn4">Predict Your Health</a>
+            </div>
+            <div class="right">
+                <img src="{{ url_for('static', filename='home_img3.jpg') }}" alt="">
+            </div>
+            </div>
+        </div>
+      </section>
+
+      <!--------how it works -->
+      <section class="how-it-works">
+        <div class="container">
+          <span class="tag">How It Works</span>
+          <h1>Powered by Advanced Machine Learning</h1>
+          <p class="subtitle">
+            Our platform uses sophisticated algorithms trained on millions of medical records to provide accurate health predictions.
+          </p>
+      
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h2>Enter Your Symptoms</h2>
+              <p>Use our intuitive interface to input your symptoms and health information.</p>
+              <img src="{{ url_for('static', filename='home_img4.jpg') }}" alt="Enter Symptoms">
+            </div>
+      
+            <div class="step">
+              <div class="step-number">2</div>
+              <h2>AI Analysis</h2>
+              <p>Our machine learning models analyze your data against our extensive medical database.</p>
+              <img src="{{ url_for('static', filename='home_img5.jpg') }}" alt="AI Analysis">
+            </div>
+      
+            <div class="step">
+              <div class="step-number">3</div>
+              <h2>Get Predictions</h2>
+              <p>Receive detailed health insights and potential condition predictions with next steps.</p>
+              <img src="{{ url_for('static', filename='home_img6.jpg') }}" alt="Get Predictions">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-----prediction section------->
+      <section class="health-prediction-section">
+        <div class="health-container">
+          <div class="health-right">
+            <img src="{{ url_for('static', filename='home_img7.jpg') }}" alt="Health AI Illustration"class="health-image"/>
+          </div>
+          <div class="health-left">
+            <div class="health-tag">Our Technology</div>
+            <h2 class="health-title">Cutting-Edge Health Prediction</h2>
+            <div class="health-feature">
+                <div class="health-icon"><i class="fas fa-check" style="color: white;"></i></div>
+              <div class="health-text">
+                <h4>High Accuracy Predictions</h4>
+                <p>Our models achieve over 90% accuracy in identifying common conditions based on symptom patterns.</p>
+              </div>
+            </div>
+            <div class="health-feature">
+                <div class="health-icon"><i class="fas fa-check" style="color: white;"></i></div>
+              <div class="health-text">
+                <h4>Continuously Learning</h4>
+                <p>Our AI models continuously improve as they process more health data and medical research.</p>
+              </div>
+            </div>     
+            <div class="health-feature">
+                <div class="health-icon"><i class="fas fa-check" style="color: white;"></i></div>
+              <div class="health-text">
+                <h4>Privacy-Focused</h4>
+                <p>Your health data is encrypted and secure, used only to improve your personal predictions.</p>
+              </div>
+            </div>
+            <div class="health-feature">
+                <div class="health-icon"><i class="fas fa-check" style="color: white;"></i></div>
+              <div class="health-text">
+                <h4>Medical Expert Oversight</h4>
+                <p>Our algorithms are developed and regularly reviewed by a team of healthcare professionals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-------why choose us------>
+      <section class="section">
+        <div class="badge">Key Benefits</div>
+        <h1>Why Choose Proactive Patient Monitoring?</h1>
+        <p class="subtitle">
+          Discover how our platform helps you understand your health better through machine learning.
+        </p>
+    
+        <div class="grid">
+    
+          <div class="card">
+            <div class="icon">1</div>
+            <h3>AI-Driven Diagnostics</h3>
+            <p>Leverages advanced machine learning models trained on diverse medical datasets to deliver accurate, clinically-relevant predictions.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">2</div>
+            <h3>Early Disease Detection</h3>
+            <p>Supports pathologists in identifying potential conditions—like diabetes, migraines, and cancers—at earlier stages, enabling timely intervention.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">3</div>
+            <h3>Secure Data Handling</h3>
+            <p>Implements robust security protocols to ensure all patient and clinical data is encrypted, confidential, and handled with strict privacy standards.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">4</div>
+            <h3>Clinical Input History</h3>
+            <p>Maintains logs of previous diagnostic inputs and predictions to help monitor patient progression and support longitudinal analysis.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">5</div>
+            <h3>Intuitive Web Interface</h3>
+            <p>Designed for healthcare professionals, offering a streamlined, user-friendly interface for quick data entry and real-time prediction results.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">6</div>
+            <h3>Research-Backed Models</h3>
+            <p>Built on validated, publicly available medical datasets and evaluated through thorough testing to ensure clinical reliability and accuracy.</p>
+          </div>
+        </div>
+      </section>
+
+      <!--------image section------->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>Experience A Smarter Way To Monitor  Health <br> Our AI-Driven Platform</h2>
+          <p>Proactive Patient Monitoring empowers pathologists with intelligent, ML-driven diagnostic insights and<br> expert-validated predictions.
+           It aids in anticipating potential diseases, supports <br>evidence-based decision-making, and streamlines early detection—making it <br>a trusted diagnostic partner in modern healthcare. </p>  
+        </div>
+      </section>
+
+
+      <!--------footer-------->
+      <section class="footer">
+        <img src="{{ url_for('static', filename='iconimg.jpg') }}" alt="MediMother Logo" style="height: 60px; display: block; margin: 0 auto;">
+        <h2>Proactive Patient Monitoring</h2>
+        <p>Proactive Patient Monitoring is your reliable assistant in AI-powered diagnostics, leveraging predictive insights to identify potential health risks early.<br>
+          Designed to support pathologists and clinicians, it offers precise, data-driven predictions and actionable diagnostic guidance—enhancing clinical workflows, <br>
+          improving decision-making, and ultimately contributing to faster, more accurate patient care.</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by Palak Bansal,Shivangi Singh,Shrejal Chauhan</p>
+      </section>
+      
+    
+      
+      
+      <script src="{{ url_for('static', filename='main.js') }}"></script>
+    
+
+      
+      
+
+      <script>
+  // Close popup on close button click
+  document.getElementById("closeBtn").onclick = function() {
+    document.getElementById("popupBox").style.display = "none";
+  };
+
+  // Show popup only when user clicks Login/Register button
+  document.querySelector('.Login').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById("popupBox").style.display = "flex";
+  });
+</script>
+
+          
+
+</body>
+</html>

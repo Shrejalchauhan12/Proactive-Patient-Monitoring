@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proactive Patient Monitoring</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='iconimg.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='covidpredict.css') }}">
+    
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+      <img src="{{ url_for('static', filename='iconimg.jpg') }}" alt="MediMother Logo" style="height: 40px;">
+      <strong style="color:#2e6376; font-size:20px;">Proactive Patient Monitoring</strong>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('index') }}">HOME</a></li>
+        <li><a href="{{ url_for('about') }}">ABOUT US</a></li>
+        <li><a href="{{ url_for('vitality_monitor') }}">VITALITY MONITOR</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="#" class="Login">Login/Register</a>
+    </div>
+  </header>
+
+  <!-- Popup Login -->
+  <div class="popup" id="popupBox">
+    <div class="popup-content">
+      <span class="close-btn" id="closeBtn">&times;</span>
+      <h2 id="popupTitle">Login</h2>
+      <form id="popupForm">
+        <input type="email" placeholder="Email ID" required><br>
+        <input type="password" placeholder="Password" required><br>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <p id="extraText">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+    </div>
+  </div>
+
+  <!-- Main Form -->
+  <main class="main" align="center">
+  <form action="/covidpredict" method="post">
+  <h1>Please Enter the Following Details</h1>
+  <table>
+    {% for symptom in [
+      "Breathing Problem", "Fever", "Dry Cough", "Sore throat", "Running Nose", "Asthma",
+      "Chronic Lung Disease", "Headache", "Heart Disease", "Diabetes", "Hyper Tension",
+      "Fatigue", "Gastrointestinal", "Abroad travel", "Contact with COVID Patient",
+      "Attended Large Gathering", "Visited Public Exposed Places",
+      "Family working in Public Exposed Places", "Wearing Masks", "Sanitization from Market"
+    ] %}
+    <tr>
+      <td>{{ symptom }}:</td>
+      <td>
+        <label><input type="radio" name="{{ symptom }}" value="1" required> Yes</label>
+        <label><input type="radio" name="{{ symptom }}" value="0"> No</label>
+      </td>
+    </tr>
+    {% endfor %}
+  </table><br>
+   <div class="button-wrapper">
+  <button type="submit">Predict</button>
+</div>
+
+  {% if prediction_text %}
+  <h2>{{ prediction_text }}</h2>
+  {% endif %}
+</form>
+
+  </main>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

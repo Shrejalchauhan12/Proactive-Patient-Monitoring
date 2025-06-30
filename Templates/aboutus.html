@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proactive Patient Monitoring</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='iconimg.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="navbar">
+          <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+            <img src="{{ url_for('static', filename='iconimg.jpg') }}" alt="MediMother Logo" style="height: 40px;">
+             <strong style="color:#2e6376; font-size:20px;">Proactive Patient Monitoring</strong>
+          </div>
+          
+          <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT US</a></li>
+            <li><a href="{{ url_for('vitality_monitor') }}">VITALITY MONITOR</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="#" class="Login">Login/Register</a>
+        </div>
+      </header>
+    
+      <!-- Popup Box (Placed outside header) -->
+      <div class="popup" id="popupBox">
+        <div class="popup-content">
+          <span class="close-btn" id="closeBtn">&times;</span>
+    
+          <h2 id="popupTitle">Login</h2>
+    
+          <form id="popupForm">
+            <input type="email" placeholder="Email ID" required><br>
+            <input type="password" placeholder="Password" required><br>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+    
+          <p id="extraText">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+        </div>
+      </div>
+
+
+      <!-----slider------->
+    <div class="slider">
+        <section class="slide active"> 
+            <h1 class="slide-heading">EMPOWERING HEALTH THROUGH INNOVATION.</h1> 
+          <div class="split left">
+            <div class="overlay"></div>
+            <img src="{{ url_for('static', filename='about_img1.jpg') }}" alt="Left1">
+          </div>
+          <div class="split right">
+            <div class="overlay"></div>
+            <img src="{{ url_for('static', filename='about_img2.jpg') }}" alt="Right1">
+          </div>
+        </section>
+      
+        <section class="slide">
+            <h1 class="slide-heading">PRECISION CARE FOR A HEALTHIER TOMORROW.</h1> 
+          <div class="split left">
+            <div class="overlay"></div>
+            <img src="{{ url_for('static', filename='about_img3.jpg') }}" alt="Left2">
+          </div>
+          <div class="split right">
+            <div class="overlay"></div>
+            <img src="{{ url_for('static', filename='about_img4.jpg') }}" alt="Right2">
+          </div>
+        </section>
+      
+        <section class="slide">
+            <h1 class="slide-heading">WHERE TECHNOLOGY MEETS COMPASSION.</h1> 
+          <div class="split left">
+            <div class="overlay"></div>
+            <img src="{{ url_for('static', filename='about_img5.jpg') }}" alt="Left3">
+          </div>
+          <div class="split right">
+            <div class="overlay"></div>
+            <img src="{{ url_for('static', filename='about_img6.jpg') }}" alt="Right3">
+          </div>
+        </section>
+
+        <section class="slide">
+            <h1 class="slide-heading">STRONGER HEALTH STARTS HERE.</h1> 
+            <div class="split left">
+                <div class="overlay"></div>
+              <img src="{{ url_for('static', filename='about_img7.jpg') }}" alt="Left2">
+            </div>
+            <div class="split right">
+                <div class="overlay"></div>
+              <img src="{{ url_for('static', filename='about_img8.jpg') }}" alt="Right2">
+            </div>
+          </section>
+
+          <section class="slide">
+            <h1 class="slide-heading">SMART HEALTHCARE FOR SMARTER LIVING.</h1> 
+            <div class="split left">
+                <div class="overlay"></div>
+              <img src="{{ url_for('static', filename='about_img9.jpg') }}" alt="Left2">
+            </div>
+            <div class="split right">
+                <div class="overlay"></div>
+              <img src="{{ url_for('static', filename='about_img10.jpg') }}" alt="Right2">
+            </div>
+          </section>
+    </div>
+
+    <!----our values------->
+    <section class="section">
+        <h1>OUR VALUES</h1>
+        <p class="subtitle">Rooted in care, inspired by innovation — our values shape a healthier tomorrow.</p>
+    
+        <div class="grid">
+    
+          <div class="card">
+            <div class="icon">1</div>
+            <h3>Trust & Privacy</h3>
+            <p>We prioritize user privacy and data security in everything we do.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">2</div>
+            <h3>Innovation</h3>
+            <p>We continuously improve our technology to provide the most accurate predictions.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">3</div>
+            <h3>Compassion</h3>
+            <p>We approach healthcare with empathy and understanding of individual needs.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">4</div>
+            <h3>Accessibility</h3>
+            <p>We believe healthcare insights should be available to everyone, everywhere.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">5</div>
+            <h3>Excellence</h3>
+            <p>We strive for the highest standards in our predictions and user experience.</p>
+          </div>
+    
+          <div class="card">
+            <div class="icon">6</div>
+            <h3>Proactive Care</h3>
+            <p>We help detect health risks early, enabling faster intervention and better outcomes.</p>
+          </div>
+        </div>
+      </section>
+
+    <!-----our mission--------->
+    <section class="about">
+        <div class="row">
+            <div class="about-left">
+                <h1>OUR MISSION</h1>
+                <img src="{{ url_for('static', filename='about_img11.jpg') }}" alt="">
+            </div>
+            <div class="about-right">
+                <h3>Predict. Prevent. Protect.</h3>
+                <p>At Proactive Patient Monitoring, we’re revolutionizing medical diagnostics by providing pathologists and healthcare professionals with AI-powered tools for early disease prediction. Using advanced machine learning models trained on extensive and diverse medical data, our platform delivers fast, accurate, and reliable predictions for diseases like diabetes, lung cancer, breast cancer, migraines, and more.
+                 Our mission is to shift healthcare from reactive to proactive by identifying risks early, helping clinicians make informed, data-driven decisions quickly and confidently. Designed for seamless integration into clinical workflows, Maddie Mother offers comprehensive and trustworthy insights through a user-friendly interface, allowing professionals to focus on personalized patient care and improved outcomes.
+                We continuously update our models with the latest medical research, cutting-edge technology, and real-world clinical feedback to maintain high accuracy, relevance, and robustness. Maddie Mother empowers healthcare providers to detect diseases sooner, personalize treatments, reduce diagnostic delays, and improve patient outcomes—bringing smarter, more efficient, and accessible diagnostics to the forefront of modern care.</p>
+          </div>
+        </div> 
+      </section>
+
+
+      <!------how it works------->
+      <div class="how-it-works">
+        <h2>How Does It Work</h2>
+        <p>Proactive Patient Monitoring uses machine learning to analyze symptoms and predict potential diseases, providing fast and reliable health insights.</p>
+      
+        <div class="slider-container">
+          <div class="steps-slider" id="stepsSlider">
+            <div class="step">
+              <div class="circle">1</div>
+              <h3>Input Symptoms</h3>
+              <p>Users describe their symptoms through our intuitive interface.</p>
+            </div>
+      
+            <div class="arrow">➔</div>
+
+            <div class="step">
+              <div class="circle">2</div>
+              <h3>Data Processing</h3>
+              <p>Our AI analyzes the symptoms against our vast database of medical knowledge.</p>
+            </div>
+      
+            <div class="arrow">➔</div>
+
+            <div class="step">
+              <div class="circle">3</div>
+              <h3>Pattern Recognition</h3>
+              <p>Machine learning models identify patterns that match known health conditions.</p>
+            </div>
+      
+            <div class="arrow">➔</div>
+
+            <div class="step">
+              <div class="circle">4</div>
+              <h3>Prediction Generation</h3>
+              <p>The system generates a list of potential conditions with confidence scores.</p>
+            </div>
+
+            <div class="arrow">➔</div>
+
+            <div class="step">
+                <div class="circle">5</div>
+                <h3>Actionable Insights</h3>
+                <p>Users receive personalized recommendations for next steps.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    
+     <!--------footer-------->
+     <section class="footer">
+      <img src="{{ url_for('static', filename='iconimg.jpg') }}" alt="MediMother Logo" style="height: 60px; display: block; margin: 0 auto;">
+      <h2>Proactive Patient Monitoring</h2>
+        <p>Proactive Patient Monitoring is your reliable assistant in AI-powered diagnostics, leveraging predictive insights to identify potential health risks early.<br>
+          Designed to support pathologists and clinicians, it offers precise, data-driven predictions and actionable diagnostic guidance—enhancing clinical workflows, <br>
+          improving decision-making, and ultimately contributing to faster, more accurate patient care.</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by Palak Bansal,Shivangi Singh,Shrejal Chauhan</p>
+      </section>
+      
+
+      
+    
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    
+
+    
+</body>
+</html>

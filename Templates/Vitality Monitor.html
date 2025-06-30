@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proactive Patient Monitoring</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='iconimg.jpg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Vitality Monitor.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="navbar">
+      <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+        <img src="{{ url_for('static', filename='iconimg.jpg') }}" alt="MediMother Logo" style="height: 40px;">
+        <strong style="color:#2e6376; font-size:20px;">Proactive Patient Monitoring</strong>
+      </div>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">HOME</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT US</a></li>
+            <li><a href="{{ url_for('vitality_monitor') }}">VITALITY MONITOR</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="#" class="Login">Login/Register</a>
+        </div>
+      </header>
+    
+      <!-- Popup Box (Placed outside header) -->
+      <div class="popup" id="popupBox">
+        <div class="popup-content">
+          <span class="close-btn" id="closeBtn">&times;</span>
+    
+          <h2 id="popupTitle">Login</h2>
+    
+          <form id="popupForm">
+            <input type="email" placeholder="Email ID" required><br>
+            <input type="password" placeholder="Password" required><br>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+    
+          <p id="extraText">Don't have an account? <a href="#" id="switchToRegister">Register here</a></p>
+        </div>
+      </div>
+
+
+      <!------slider-------->
+      <section class="slider-section">
+        <div class="slider">
+          <div class="slide active">
+            <img src="{{ url_for('static', filename='vitality_img1.jpg') }}" alt="Slide 1">
+          </div>
+          <div class="slide">
+            <img src="{{ url_for('static', filename='vitality_img2.jpg') }}" alt="Slide 2">
+          </div>
+          <div class="slide">
+            <img src="{{ url_for('static', filename='vitality_img3.jpg') }}" alt="Slide 3">
+          </div>
+          <div class="slide">
+            <img src="{{ url_for('static', filename='vitality_img4.jpg') }}" alt="Slide 4">
+          </div>
+          <div class="slide">
+            <img src="{{ url_for('static', filename='vitality_img5.jpg') }}" alt="Slide 5">
+          </div>
+        </div>
+      </section>
+
+      <!-----vitality-------->
+      <section class="vitality-section">
+        <div class="content">
+          <h1>Revolutionizing Early Diagnosis with AI</h1>
+          <p>
+            At Proactive Patient Monitoring, we believe that knowledge is the foundation of better healthcare. Our mission is to empower pathologists and medical professionals with advanced AI-driven tools that provide fast, reliable, and intelligent disease predictions. Using cutting-edge machine learning models trained on extensive clinical data, our platform helps identify potential health issues early, improving diagnostic accuracy and patient outcomes.
+            When healthcare professionals use Proactive Patient Monitoring, they interact with a clean, intuitive interface designed for efficiency and ease. By inputting patient symptoms, medical history, and test results, the system analyzes the data against a vast database of real-world cases and research, uncovering complex patterns and correlations. It then generates a prioritized list of possible diagnoses, each accompanied by confidence scores to support transparent, data-driven decision-making.
+           Proactive Patient Monitoring also provides detailed information on each condition — including symptoms, risk factors, preventive measures, and guidelines on when to seek further evaluation — serving as a comprehensive diagnostic companion.
+           While Proactive Patient Monitoring does not replace professional clinical judgment, it bridges the gap between symptom onset and timely intervention, helping medical professionals detect diseases sooner and manage care more proactively. Our goal is to reduce diagnostic delays, alleviate uncertainty, and ultimately improve patient health outcomes.
+           With Proactive Patient Monitoring, healthcare professionals are equipped to deliver smarter, faster, and more accurate diagnoses—transforming the future of medical diagnostics through technology.</p>
+          <a href="{{ url_for('icons') }}" class="btn">PREDICT NOW</a>
+        </div>
+      </section>
+
+
+
+      <!------how it works------->
+      <div class="how-it-works">
+        <h2>How Does It Work</h2>
+        <p>Proactive Patient Monitoring uses machine learning to analyze symptoms and predict potential diseases, providing fast and reliable health insights.</p>
+      
+        <div class="slider-container">
+          <div class="steps-slider" id="stepsSlider">
+            <div class="step">
+              <div class="circle">1</div>
+              <h3>Input Symptoms</h3>
+              <p>Users describe their symptoms through our intuitive interface.</p>
+            </div>
+      
+            <div class="arrow">➔</div>
+
+            <div class="step">
+              <div class="circle">2</div>
+              <h3>Data Processing</h3>
+              <p>Our AI analyzes the symptoms against our vast database of medical knowledge.</p>
+            </div>
+      
+            <div class="arrow">➔</div>
+
+            <div class="step">
+              <div class="circle">3</div>
+              <h3>Pattern Recognition</h3>
+              <p>Machine learning models identify patterns that match known health conditions.</p>
+            </div>
+      
+            <div class="arrow">➔</div>
+
+            <div class="step">
+              <div class="circle">4</div>
+              <h3>Prediction Generation</h3>
+              <p>The system generates a list of potential conditions with confidence scores.</p>
+            </div>
+
+            <div class="arrow">➔</div>
+
+            <div class="step">
+                <div class="circle">5</div>
+                <h3>Actionable Insights</h3>
+                <p>Users receive personalized recommendations for next steps.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--------image section------->
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>Accurate Symptom Predictions, <br>Smarter Diagnostic Support</h2>
+          <p>With Proactive Patient Monitoring, healthcare professionals can make informed diagnostic decisions <br> through accurate AI-powered predictions based on patient symptoms and clinical data.<br>
+             Our intelligent system delivers personalized insights, enabling proactive and <br> timely interventions for improved patient outcomes.</p>
+        </div>
+      </section>
+
+
+      <!--------footer-------->
+     <section class="footer">
+      <img src="{{ url_for('static', filename='iconimg.jpg') }}" alt="MediMother Logo" style="height: 60px; display: block; margin: 0 auto;">
+      <h2>Proactive Patient Monitoring</h2>
+        <p>Proactive Patient Monitoring is your reliable assistant in AI-powered diagnostics, leveraging predictive insights to identify potential health risks early.<br>
+          Designed to support pathologists and clinicians, it offers precise, data-driven predictions and actionable diagnostic guidance—enhancing clinical workflows, <br>
+          improving decision-making, and ultimately contributing to faster, more accurate patient care.</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by Palak Bansal,Shivangi Singh,Shrejal Chauhan</p>
+      </section>
+      
+
+      <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
